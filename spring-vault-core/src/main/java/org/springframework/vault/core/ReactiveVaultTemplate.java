@@ -259,6 +259,16 @@ public class ReactiveVaultTemplate implements ReactiveVaultOperations {
 	}
 
 	@Override
+	public ReactiveVaultPkiOperations opsForPki() {
+		return opsForPki("pki");
+	}
+
+	@Override
+	public ReactiveVaultPkiOperations opsForPki(String path) {
+		return new ReactiveVaultPkiTemplate(this, path);
+	}
+
+	@Override
 	public Mono<VaultResponse> read(String path) {
 
 		Assert.hasText(path, "Path must not be empty");

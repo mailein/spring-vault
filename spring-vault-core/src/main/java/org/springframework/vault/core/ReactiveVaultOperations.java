@@ -74,6 +74,19 @@ public interface ReactiveVaultOperations {
 	ReactiveVaultVersionedKeyValueOperations opsForVersionedKeyValue(String path);
 
 	/**
+	 * @return the operations interface to interact with the Vault PKI backend.
+	 */
+	ReactiveVaultPkiOperations opsForPki();
+
+	/**
+	 * Return {@link ReactiveVaultPkiOperations} if the PKI backend is mounted on a different path
+	 * than {@code pki}.
+	 * @param path the mount path
+	 * @return the operations interface to interact with the Vault PKI backend.
+	 */
+	ReactiveVaultPkiOperations opsForPki(String path);
+
+	/**
 	 * @return the operations interface to interact with the Vault transit backend.
 	 * @since 3.1
 	 */

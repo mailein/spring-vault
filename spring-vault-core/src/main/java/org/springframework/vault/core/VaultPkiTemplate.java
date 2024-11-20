@@ -198,7 +198,7 @@ public class VaultPkiTemplate implements VaultPkiOperations {
 	 * @param certificateRequest must not be {@literal null}.
 	 * @return the body as {@link Map}.
 	 */
-	private static Map<String, Object> createIssueRequest(VaultCertificateRequest certificateRequest) {
+	static Map<String, Object> createIssueRequest(VaultCertificateRequest certificateRequest) {
 
 		Assert.notNull(certificateRequest, "Certificate request must not be null");
 
